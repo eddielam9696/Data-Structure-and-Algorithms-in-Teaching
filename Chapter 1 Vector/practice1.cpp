@@ -17,22 +17,22 @@ int main(){
     //insert 88 before 91
     int quizScoresSize = quizScores.size();
     quizScores.insert(quizScores.begin() + quizScoresSize - 1, 88);
-
+    quizScoresSize=quizScoresSize+1;
     cout << "All scores: ";
     for(int i = 0; i < quizScoresSize; i++){
       cout <<  quizScores.operator[](i) << " ";
     }
     cout << endl;
-    cout << "First score: " << quizScores.at(1) << endl;
-    cout << "Third score: " << quizScores.at(3) << endl;
-    cout << "Last score: " << quizScores.at(5) << endl;
+    cout << "First score: " << quizScores.at(0) << endl;
+    cout << "Third score: " << quizScores.at(2) << endl;
+    cout << "Last score: " << quizScores.at(4) << endl;
 
     float averageQuizScores;
     for(int i = 0; i < quizScoresSize; i++){
         averageQuizScores = averageQuizScores + quizScores.operator[](i);
     }
 
-    averageQuizScores = (averageQuizScores/5);
+    averageQuizScores = (averageQuizScores/quizScoresSize);
 
     cout << "Average: " << averageQuizScores;
 }
